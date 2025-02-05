@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { AbstractControl, FormBuilder, FormGroup, ValidationErrors, Validators } from '@angular/forms';
 import { ValidatorService } from 'src/app/shared/services/validator.service';
-import { EmailValidatorService } from 'src/app/shared/validators/email-validator.service';
+
 
 @Component({
   selector: 'app-formulario',
@@ -33,6 +33,16 @@ export class FormularioComponent {
     return this.validatorsService.isValidField(this.myForm, field);
   }
 
+  public getFieldError(field: string): string {
+    const control = this.myForm.get(field);
+    if (control?.hasError('required')) {
+      return 'Este campo es requerido';
+    } else if (control?.hasError('minlength')) {
+      return `Debe tener al menos ${control.errors?.['minlength'].requiredLength} caracteres`;
+    }
+    return '';
+  }
+
   onSubmit() {
       if (this.myForm.valid) {
         this.formSubmitted = true;
@@ -41,9 +51,9 @@ export class FormularioComponent {
         setTimeout(() => {
           this.myForm.reset();
           this.formSubmitted = false;
-        }, 3000);
+        }, 4000);
       } else {
-        this.myForm.markAllAsTouched(); // Marca los campos para mostrar errores
+        this.myForm.markAllAsTouched();
       }
     }
   }

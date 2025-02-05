@@ -1,111 +1,86 @@
-<h1>Formulario</h1>
+<h1 class="text-center mb-4">Formulario de Registro</h1>
 
-<div class="row">
-  <div class="col">
+<div class="row justify-content-center">
+  <div class="col-md-8 col-lg-6">
+    <form [formGroup]="myForm" (ngSubmit)="onSubmit()" autocomplete="off" class="p-4 border rounded shadow bg-light">
 
-      <form [formGroup]="myForm" (ngSubmit)="onSubmit()" autocomplete="off" class="mt-5">
+                  <!-- Mensaje de éxito -->
+                  <div *ngIf="formSubmitted" class="alert alert-success mt-3 text-center">
+                    ¡Formulario enviado correctamente!
+                  </div>
 
-          <!-- Nombre -->
-          <div class="row mb-3">
-              <label class="col-sm-3 col-form-label">Nombre</label>
-              <div class="col-sm-9">
-                  <input type="text"
-                         class="form-control"
-                         formControlName="name"
-                         placeholder="Nombre del usuario">
-
-                  <span
-                   *ngIf="isValidField('name')"
-                   class="form-text text-danger">
-                      Es imprescindible el nombre
-                  </span>
-              </div>
-          </div>
-
-               <!-- Apellidos -->
-               <div class="row mb-3">
-                 <label class="col-sm-3 col-form-label">Apellidos</label>
-                <div class="col-sm-9">
-                     <input type="text"
-                      class="form-control"
-                         formControlName="surname"
-                   placeholder="Apellidos del usuario">
-
-                 <span
-                      *ngIf="isValidField('surname')"
-                      class="form-text text-danger">
-                     Deben ser ambos apellidos
-                    </span>
-                 </div>
-             </div>
-
-          <!-- Email -->
-          <div class="row mb-3">
-              <label class="col-sm-3 col-form-label">Email</label>
-              <div class="col-sm-9">
-                  <input type="email"
-                         class="form-control"
-                         formControlName="email"
-                         placeholder="Email del usuario">
-                  <span
-                  *ngIf="isValidField('email')"
-                   class="form-text text-danger">
-                      Tiene que ser un email valido
-                  </span>
-              </div>
-          </div>
-
-          <!-- Password -->
-          <div class="row mb-3">
-              <label class="col-sm-3 col-form-label">Contraseña</label>
-              <div class="col-sm-9">
-                  <input type="password"
-                         class="form-control"
-                         formControlName="password"
-                         placeholder="Contraseña de su cuenta">
-
-                  <span
-                  *ngIf="isValidField('password')"
-                  class="form-text text-danger">
-                       La contraseña debe de ser mayor de 6 caracteres.
-                  </span>
-              </div>
-          </div>
-
-          <!-- Password2 -->
-          <div class="row mb-3">
-              <label class="col-sm-3 col-form-label">Confirmar</label>
-              <div class="col-sm-9">
-                  <input type="password"
-                         class="form-control"
-                         formControlName="password2"
-                         placeholder="Confirmar la contraseña">
-
-                  <span
-                  *ngIf="isValidField('password2')"
-                  class="form-text text-danger">
-                       Las contraseñas deben de ser iguales
-                  </span>
-              </div>
-          </div>
-
-
-          <div class="row">
-              <div class="col">
-                  <button class="btn btn-primary float-end"
-                          type="submit">
-                      registrar
-                  </button>
-              </div>
-          </div>
-
-                <!-- Mensaje de éxito -->
-      <div *ngIf="formSubmitted" class="alert alert-success mt-3">
-         ¡Formulario enviado correctamente!
+      <!-- Nombre -->
+      <div class="mb-3">
+        <label class="form-label fw-bold">Nombre</label>
+        <input
+          type="text"
+          class="form-control"
+          formControlName="name"
+          placeholder="Nombre del usuario">
+        <div *ngIf="isValidField('name')" class="text-danger small mt-1">
+          {{getFieldError('name')}}
+        </div>
       </div>
 
+      <!-- Apellidos -->
+      <div class="mb-3">
+        <label class="form-label fw-bold">Apellidos</label>
+        <input
+          type="text"
+          class="form-control"
+          formControlName="surname"
+          placeholder="Apellidos del usuario">
+        <div *ngIf="isValidField('surname')" class="text-danger small mt-1">
+          Deben ser ambos apellidos
+        </div>
+      </div>
 
-      </form>
+      <!-- Email -->
+      <div class="mb-3">
+        <label class="form-label fw-bold">Email</label>
+        <input
+          type="email"
+          class="form-control"
+          formControlName="email"
+          placeholder="Email del usuario">
+        <div *ngIf="isValidField('email')" class="text-danger small mt-1">
+          Tiene que ser un email válido
+        </div>
+      </div>
+
+      <!-- Contraseña -->
+      <div class="mb-3">
+        <label class="form-label fw-bold">Contraseña</label>
+        <input
+          type="password"
+          class="form-control"
+          formControlName="password"
+          placeholder="Contraseña de su cuenta">
+        <div *ngIf="isValidField('password')" class="text-danger small mt-1">
+          La contraseña debe de ser mayor de 6 caracteres.
+        </div>
+      </div>
+
+      <!-- Confirmar Contraseña -->
+      <div class="mb-3">
+        <label class="form-label fw-bold">Confirmar Contraseña</label>
+        <input
+          type="password"
+          class="form-control"
+          formControlName="password2"
+          placeholder="Confirmar la contraseña">
+        <div *ngIf="isValidField('password2')" class="text-danger small mt-1">
+          Las contraseñas deben de ser iguales
+        </div>
+      </div>
+
+      <!-- Botón de registro -->
+      <div class="d-grid">
+        <button class="btn btn-primary fw-bold" type="submit">
+          Registrar
+        </button>
+      </div>
+
+    </form>
   </div>
 </div>
-

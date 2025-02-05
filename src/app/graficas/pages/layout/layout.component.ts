@@ -17,14 +17,15 @@ export class LayoutComponent implements OnInit{
     this.cargarDatos(); // Cargar datos iniciales
   }
 
-  cargarDatos(mes?: string, tipo?: string) {
-    this.graficosService.obtenerDatos(mes, tipo).subscribe(response => {
+  cargarDatos(mes?: string, tipo?: string, anio?: string) {
+    this.graficosService.obtenerDatos(mes, tipo, anio).subscribe(response => {
       this.data = response;
     });
   }
 
-  aplicarFiltro(filtro: { month: string, type: string }) {
-    this.cargarDatos(filtro.month, filtro.type);
+  aplicarFiltro(filtro: { month: string, type: string, year: string}) {
+    this.cargarDatos(filtro.month, filtro.type, filtro.year);
   }
+
 
 }

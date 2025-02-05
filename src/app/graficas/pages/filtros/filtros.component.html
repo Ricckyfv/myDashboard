@@ -13,9 +13,14 @@
       placeholder="Selecciona un Tipo">
     </p-dropdown>
   </div>
+  <div class="p-col-6">
+    <p-dropdown
+      [options]="anios"
+      [(ngModel)]="selectedAnio"
+      placeholder="Selecciona un Año">
+    </p-dropdown>
+  </div>
   <div class="p-col-12">
     <button pButton label="Filtrar" icon="pi pi-search" (click)="aplicarFiltro()"></button>
   </div>
 </div>
-
-
