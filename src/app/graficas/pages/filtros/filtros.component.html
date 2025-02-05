@@ -1,0 +1,21 @@
+<div class="p-grid p-fluid">
+  <div class="p-col-6">
+    <p-dropdown
+      [options]="meses"
+      [(ngModel)]="selectedMonth"
+      placeholder="Selecciona un Mes">
+    </p-dropdown>
+  </div>
+  <div class="p-col-6">
+    <p-dropdown
+      [options]="tipos"
+      [(ngModel)]="selectedType"
+      placeholder="Selecciona un Tipo">
+    </p-dropdown>
+  </div>
+  <div class="p-col-12">
+    <button pButton label="Filtrar" icon="pi pi-search" (click)="aplicarFiltro()"></button>
+  </div>
+</div>
+
+

@@ -1,1 +1,13 @@
 /* You can add global styles to this file, and also import other style files */
+a {
+  text-decoration: none !important;
+}
+
+h1{
+  text-align: center;
+  font-size: 60px;
+  font-weight: bold;
+  margin-top: 20px;
+  color: rgb(97, 34, 34);
+}
+
