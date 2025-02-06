@@ -10,14 +10,14 @@ import { RadarComponent } from './pages/graficos-page/radar/radar.component';
 
 const routes: Routes = [
   //PREGUNTAR A CARLOS, PORQUE EN VIDEO DE PROFE SI QUE DEJA DE ESTA MANERA, PERO A MI DE ESTA MANERA NO ME SALE Y NOSE REALMENTE POR QUE
-  // {
-  //   path: '',
-
-  //   children: [
-  //     {path: 'vertical-bar', component: VerticalBarComponent},
+  //  {
+  //    path: 'graficos-page',
+  //     component:    LayoutComponent,
+  //     children: [
+  //      {path: 'vertical-bar', component: VerticalBarComponent},
   //     {path: 'polar-area', component: PolarAreaComponent},
   //     {path: 'radar', component: RadarComponent},
-  //   ]
+  //  ]
   // },
 
 
