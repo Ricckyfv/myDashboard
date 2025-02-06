@@ -1,0 +1,36 @@
+/* Estilos para el contenedor del título del proyecto */
+.project-title {
+  display: flex;
+  align-items: center;
+  gap: 10px; /* Espacio entre el texto y el logo */
+  font-family:'Playfair Display', serif;
+;
+}
+
+/* Estilos para el texto "Dashboard" */
+.project-title p {
+  font-size: 1.4rem;
+  font-weight: bold;
+  color: #2c3e50; /* Color oscuro y elegante */
+  margin: 0;
+  position: relative;
+}
+
+/* Estilos para el nombre de usuario "Ricardo" */
+.project-title p .username {
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: #141be3; /* Color azul moderno */
+  margin-left: 4px;
+}
+
+/* Estilos para el logo */
+.project-title .logo {
+  width: 30px; /* Tamaño del logo */
+  height: 30px;
+  border-radius: 50%; /* Hace el logo circular */
+  border: 2px solid black; /* Borde azul */
+  padding: 5px;
+  background-color: #ecf0f1; /* Fondo claro */
+}
+

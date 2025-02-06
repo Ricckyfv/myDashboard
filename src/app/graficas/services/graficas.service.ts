@@ -11,7 +11,7 @@ export class GraficasService {
 
   constructor(private http: HttpClient) {}
 
-  obtenerDatos(mes?: string, tipo?: string, anio?: string, minimo?:string, maximo?:string): Observable<any> {
+  obtenerDatos(mes?: string, tipo?: string, anio?: string): Observable<any> {
       let params: any = {};
 
       if (mes) {
@@ -24,15 +24,6 @@ export class GraficasService {
         params.anio = anio;
       }
 
-
-      if (minimo) {
-        params.minimo = minimo;
-      }
-      if (maximo) {
-        params.maximo = maximo;
-      }
-
       return this.http.get<any>(this.apiUrl, { params });
     }
-
 }

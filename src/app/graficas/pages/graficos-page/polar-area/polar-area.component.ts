@@ -3,8 +3,7 @@ import { Component, OnInit } from '@angular/core';
 @Component({
   selector: 'app-polar-area',
   templateUrl: './polar-area.component.html',
-  styles: [
-  ]
+  styleUrls: ['./polar-area.component.css']
 })
 export class PolarAreaComponent implements OnInit{
 
@@ -35,6 +34,8 @@ export class PolarAreaComponent implements OnInit{
       };
 
       this.options = {
+        responsive: true, // Permite que la gráfica sea responsiva
+        //maintainAspectRatio: false, // Permite modificar el tamaño
           plugins: {
               legend: {
                   labels: {

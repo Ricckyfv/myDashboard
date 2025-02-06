@@ -8,10 +8,6 @@ import { GraficasService } from '../../services/graficas.service';
 })
 export class FiltrosComponent {
 
- /* public meses = ['','Enero', 'Febrero', 'Marzo', 'Abril', 'Mayo', 'Junio', 'Julio', 'Agosto', 'Septiembre', 'Octubre'];
-  public tipos = ['Ganancias', 'Perdidas'];
-  public anios = ['2022', '2023', '2024'];
-  */
   public selectedMonth: string = '';
   public selectedType: string = '';
   public selectedAnio: string= '';
@@ -53,6 +49,7 @@ public anios = [
       year: this.selectedAnio,
      });
   }
+
 
 }
 

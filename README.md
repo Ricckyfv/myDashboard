@@ -1,5 +1,7 @@
 # MyDashPractice
 
+levanar el backend desde la terminal: ```npm run start:dev```
+
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 16.2.16.
 
 ## Development server

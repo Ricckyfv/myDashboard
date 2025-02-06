@@ -31,11 +31,4 @@ export class ValidatorService {
         return form.controls[field].errors && form.controls[field].touched;
       }
 
-  // twoLastNamesValidator(control: AbstractControl): ValidationErrors | null {
-  //       if (!control.value) return null;
-  //       const words = control.value.trim().split(/\s+/);
-  //       return words.length >= 2 ? null : { twoLastNames: true };
-  //     }
-
-
 }
